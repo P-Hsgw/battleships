@@ -1,1 +1,1 @@
-(()=>{"use strict";const t=t=>({length:t,hit:function(){return!0}}),n=t(10);console.log(n.length),t()})();
+(()=>{"use strict";const t=t=>{const i={length:t,hit:()=>{i.timesHit++,console.log("Ship has been hit")},timesHit:0};return i},i=t(10);i.hit(),i.hit(),console.log(`Times hit ${i.timesHit}`),t()})();

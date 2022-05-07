@@ -4,8 +4,8 @@ test("Ship factory accept length of ship", () => {
     expect(shipFactory(10)).toBeDefined
 })
 
-test("Ship factory marks hit spot", () => {
+test("Ship factory counts hits", () => {
     const ship = shipFactory(10)
-    expect(ship.hit()
-).toBe(true)
+    ship.hit()
+    expect(ship.timesHit).toBe(1)
 })
