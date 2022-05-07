@@ -1,19 +1,14 @@
 const gameboardFactory = () => {
-    let array = [];
+    let array = []
 
     const populateGameBoard = () => {
-        obj.array = [ 
-            [0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
-            [0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
-            [0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
-            [0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
-            [0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
-            [0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
-            [0, 0, 0, 0, 0, 0, 0, 0, 0, 0],]
+        obj.array = Array.from(Array(10), () => {
+            return new Array(10).fill(0)
+        })
     }
 
     const placeShip = (ship, coordinateX, coordinateY) => {
-        array[coordinateX, coordinateY] = 1
+        obj.array[coordinateX][coordinateY] = 1
     }
 
     const receiveAttack = (coordinateX, coordinateY) => {
@@ -21,8 +16,7 @@ const gameboardFactory = () => {
         // If coordinate of ship == attack coordinate, damage ship
         // Else mark the missed spot
     }
-    let obj = {array, populateGameBoard}
+    let obj = {array, populateGameBoard, placeShip}
     return obj
 }
-
 export default gameboardFactory

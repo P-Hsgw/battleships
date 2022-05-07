@@ -1,8 +1,12 @@
 import gameboardFactory from "../modules/gameboard";
+import shipFactory from "../modules/ships";
+
 const gameboard = gameboardFactory()
 gameboard.populateGameBoard()
 
-test("Gameboard places ship on correct coordinates", () =>{
+const ship1 = shipFactory(1)
+
+test("Gameboard populates itself", () =>{
     expect(gameboard.array).toStrictEqual([ 
         [0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
         [0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
@@ -11,7 +15,26 @@ test("Gameboard places ship on correct coordinates", () =>{
         [0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
         [0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
         [0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
+        [0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
+        [0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
+        [0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
       ])
+})
+
+test("The gameboard places a ship on 1, 1 field", () => {
+    gameboard.placeShip("ship", 1, 1)
+    expect(gameboard.array).toStrictEqual([ 
+        [0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
+        [0, 1, 0, 0, 0, 0, 0, 0, 0, 0],
+        [0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
+        [0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
+        [0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
+        [0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
+        [0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
+        [0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
+        [0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
+        [0, 0, 0, 0, 0, 0, 0, 0, 0, 0],        
+    ])
 })
 
 // test("Gameboard receives attack and marks correct spot",() => {
