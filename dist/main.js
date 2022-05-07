@@ -1,0 +1,1 @@
+(()=>{"use strict";const t=t=>({length:t,hit:function(){return!0}}),n=t(10);console.log(n.length),t()})();
