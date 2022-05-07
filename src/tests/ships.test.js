@@ -9,3 +9,4 @@ test("Ship factory counts hits", () => {
     ship.hit()
     expect(ship.timesHit).toBe(1)
 })
+

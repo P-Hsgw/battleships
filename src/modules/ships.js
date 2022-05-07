@@ -11,6 +11,7 @@ const shipFactory = (length) => {
             return true
         }
     }
+    
     const obj = {length, hit, timesHit}
     return obj
 }
