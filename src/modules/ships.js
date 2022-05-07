@@ -1,5 +1,6 @@
-const shipFactory = (length) => {
+const shipFactory = (shipLength) => {
     let timesHit = 0
+    let shipHP = shipLength
 
     const hit = () => {
         obj.timesHit ++
@@ -7,12 +8,12 @@ const shipFactory = (length) => {
     }
 
     const isSunk = () => {
-        if (timesHit >= length) {
+        if (timesHit >= shipHP) {
             return true
         }
     }
-    
-    const obj = {length, hit, timesHit}
+
+    const obj = {shipLength, hit, timesHit, isSunk}
     return obj
 }
 
