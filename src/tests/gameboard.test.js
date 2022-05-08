@@ -37,8 +37,25 @@ test("The gameboard places a ship on 1, 1 field", () => {
     ])
 })
 
-test("Gameboard receives attack and marks correct spot", () => {
+test("Gameboard receives attack and marks spot 1, 1", () => {
     gameboard.placeShip(ship1, 1, 1)
     gameboard.receiveAttack(1, 1)
     expect(gameboard.array[1][1]).toBe("X")
+})
+
+test("Gameboard places ships with lenght > 1", () => {
+    const ship2 = shipFactory(2)
+    gameboard.placeShip(ship2, 1, 1)
+    expect(gameboard.array).toStrictEqual([ 
+        [null, null, null, null, null, null, null, null, null, null],
+        [null, 1, null, null, null, null, null, null, null, null],
+        [null, 1, null, null, null, null, null, null, null, null],
+        [null, null, null, null, null, null, null, null, null, null],
+        [null, null, null, null, null, null, null, null, null, null],
+        [null, null, null, null, null, null, null, null, null, null],
+        [null, null, null, null, null, null, null, null, null, null],
+        [null, null, null, null, null, null, null, null, null, null],
+        [null, null, null, null, null, null, null, null, null, null],
+        [null, null, null, null, null, null, null, null, null, null],        
+    ])
 })

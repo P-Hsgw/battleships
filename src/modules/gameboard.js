@@ -8,17 +8,18 @@ const gameboardFactory = () => {
     }
 
     const placeShip = (ship, coordinateX, coordinateY) => {
-        obj.array[coordinateX][coordinateY] = 1
-        // Check ship length, and iterate over the arr to place as many fields as possible
+        // obj.array[coordinateX][coordinateY] = 1
+        // Check ship length, and iterate over the arr to place as many fields as necessary
         // If ship is reversed, change the loop
+        for (let i=0; i<ship.shipLength; i++) {
+            obj.array[coordinateX+i][coordinateY] = 1
+        }
     }
 
     const receiveAttack = (coordinateX, coordinateY) => {
         if (obj.array[coordinateX][coordinateY] = 1) {
-            console.log("sinked")
             obj.array[coordinateX][coordinateY] = "X"
         } else {
-            console.log("missed")
             obj.array[coordinateX][coordinateY] = "X"
         }
         // Ship receives attack if clicked on coordinate

@@ -4,7 +4,6 @@ const shipFactory = (shipLength) => {
 
     const hit = () => {
         obj.timesHit ++
-        console.log("Ship has been hit")
     }
 
     const isSunk = () => {
