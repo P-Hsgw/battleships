@@ -10,11 +10,6 @@ const gameboardFactory = () => {
 
   // Place ship depending on ship length, isReverse and coordinates
   const placeShip = (ship, coordinateY, coordinateX) => {
-    // Add for loop that iwll check if array is long or wide enough to fit
-    // a ship - inside of reversed or non reversed loop, run a check to see
-    // if ship fits (i=ship length and decrement?? maybe
-
-    // eventually catch and display
     if (ship.isReversed) {
       if (coordinateX + ship.shipLength < obj.array.length) {
         for (let i = 0; i < ship.shipLength; i++) {
