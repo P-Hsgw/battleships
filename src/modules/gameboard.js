@@ -34,7 +34,7 @@ const gameboardFactory = () => {
     if ((obj.array[coordinateY][coordinateX] = 1)) {
       obj.array[coordinateY][coordinateX] = "X";
     } else {
-      obj.array[coordinateY][coordinateX] = "X";
+      obj.array[coordinateY][coordinateX] = "*";
     }
     // Ship receives attack if clicked on coordinate
     // If coordinate of ship == attack coordinate, damage ship
