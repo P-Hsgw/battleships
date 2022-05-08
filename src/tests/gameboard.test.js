@@ -63,6 +63,23 @@ test("Gameboard places ships with lenght > 1", () => {
 test("Reversed ship is placed on X axis", () => {
   const shipReversed = shipFactory(3, true);
   gameboard.placeShip(shipReversed, 3, 3);
+  expect(gameboard.array).toStrictEqual([
+    [null, null, null, null, null, null, null, null, null, null],
+    [null, 1, null, null, null, null, null, null, null, null],
+    [null, 1, null, null, null, null, null, null, null, null],
+    [null, null, null, 1, 1, 1, null, null, null, null],
+    [null, null, null, null, null, null, null, null, null, null],
+    [null, null, null, null, null, null, null, null, null, null],
+    [null, null, null, null, null, null, null, null, null, null],
+    [null, null, null, null, null, null, null, null, null, null],
+    [null, null, null, null, null, null, null, null, null, null],
+    [null, null, null, null, null, null, null, null, null, null],
+  ]);
+});
+
+test("Gameboard will not place ship if ship wont' fit on the board", () => {
+  const shipz = shipFactory(3, true);
+  gameboard.placeShip(shipz, 1, 9);
   console.log(gameboard.array);
   expect(gameboard.array).toStrictEqual([
     [null, null, null, null, null, null, null, null, null, null],
