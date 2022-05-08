@@ -59,3 +59,21 @@ test("Gameboard places ships with lenght > 1", () => {
     [null, null, null, null, null, null, null, null, null, null],
   ]);
 });
+
+test("Reversed ship is placed on X axis", () => {
+  const shipReversed = shipFactory(3, true);
+  gameboard.placeShip(shipReversed, 3, 3);
+  console.log(gameboard.array);
+  expect(gameboard.array).toStrictEqual([
+    [null, null, null, null, null, null, null, null, null, null],
+    [null, 1, null, null, null, null, null, null, null, null],
+    [null, 1, null, null, null, null, null, null, null, null],
+    [null, null, null, 1, 1, 1, null, null, null, null],
+    [null, null, null, null, null, null, null, null, null, null],
+    [null, null, null, null, null, null, null, null, null, null],
+    [null, null, null, null, null, null, null, null, null, null],
+    [null, null, null, null, null, null, null, null, null, null],
+    [null, null, null, null, null, null, null, null, null, null],
+    [null, null, null, null, null, null, null, null, null, null],
+  ]);
+});
