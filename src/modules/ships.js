@@ -1,4 +1,4 @@
-const shipFactory = (shipLength) => {
+const shipFactory = (shipLength, isReversed) => {
     let timesHit = 0
     let shipHP = shipLength
 
@@ -12,7 +12,7 @@ const shipFactory = (shipLength) => {
         }
     }
 
-    const obj = {shipLength, hit, timesHit, isSunk}
+    const obj = {shipLength, hit, timesHit, isSunk, isReversed}
     return obj
 }
 

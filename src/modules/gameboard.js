@@ -9,9 +9,16 @@ const gameboardFactory = () => {
 
     const placeShip = (ship, coordinateY, coordinateX) => {
         // If ship is reversed, change the loop
-        for (let i=0; i<ship.shipLength; i++) {
-            obj.array[coordinateY+i][coordinateX] = 1
+        if (ship.isReversed) {
+            for (let i=0; i<ship.shipLength; i++) {
+                obj.array[coordinateY][coordinateX+i] = 1
+            }
+        } else {
+            for (let i=0; i<ship.shipLength; i++) {
+                obj.array[coordinateY+i][coordinateX] = 1
+            }
         }
+       
     }
 
     const receiveAttack = (coordinateY, coordinateX) => {

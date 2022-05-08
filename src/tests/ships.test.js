@@ -5,7 +5,7 @@ test("Ship factory accept length of ship", () => {
 })
 
 test("Ship factory counts hits", () => {
-    const ship = shipFactory(10)
+    const ship = shipFactory(10, false)
     ship.hit()
     expect(ship.timesHit).toBe(1)
 })
